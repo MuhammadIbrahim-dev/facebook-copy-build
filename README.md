@@ -48,6 +48,98 @@ Join our community of developers creating universal apps.
 
 - [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
 - [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+
+## create tabs slide to add 
+this method is very perfect for navigator i will recommended you.
+
+# import this 
+```
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+```
+and 
+```
+cosnt Tab = createMetrialTopTabNavigator()
+```
+
+✅ Option 2: Use react-native-tab-view for Fully Custom Swipeable + Bottom UI
+If swipeable "slides" at the bottom is the main goal, it’s better to not rely on the navigators and instead use react-native-tab-view directly. Here’s a sample:
+
+📦 Install it first:
+```
+npm install react-native-tab-view
+```
+💡 Example: Custom Bottom Swipe Tabs
+```
+import * as React from 'react';
+import { View, Text, useWindowDimensions, StyleSheet } from 'react-native';
+import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
+
+const Home = () => <View style={styles.scene}><Text>Home Screen</Text></View>;
+const Explore = () => <View style={styles.scene}><Text>Explore Screen</Text></View>;
+const Profile = () => <View style={styles.scene}><Text>Profile Screen</Text></View>;
+
+export default function SwipeTabs() {
+  const layout = useWindowDimensions();
+  const [index, setIndex] = React.useState(0);
+  const [routes] = React.useState([
+    { key: 'home', title: 'Home' },
+    { key: 'explore', title: 'Explore' },
+    { key: 'profile', title: 'Profile' },
+  ]);
+
+  const renderScene = SceneMap({
+    home: Home,
+    explore: Explore,
+    profile: Profile,
+  });
+
+  return (
+    <>
+      <TabView
+        navigationState={{ index, routes }}
+        renderScene={renderScene}
+        onIndexChange={setIndex}
+        initialLayout={{ width: layout.width }}
+        renderTabBar={() => null} // Hide the top tab bar
+      />
+      <View style={styles.bottomTabs}>
+        {routes.map((route, i) => (
+          <Text
+            key={route.key}
+            style={[styles.tabItem, index === i && styles.activeTab]}
+            onPress={() => setIndex(i)}
+          >
+            {route.title}
+          </Text>
+        ))}
+      </View>
+    </>
+  );
+}
+
+const styles = StyleSheet.create({
+  scene: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  bottomTabs: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    paddingVertical: 10,
+    backgroundColor: '#eee',
+  },
+  tabItem: {
+    padding: 10,
+    color: 'gray',
+  },
+  activeTab: {
+    color: 'blue',
+        fontWeight: 'bold',
+  },
+});
+```
+# if this method is not work to this two method use.
 ## tabs create to use this code
 ```
 export default function TabLayout() {
@@ -85,6 +177,7 @@ export default function TabLayout() {
     </Tabs>
 ```
 ## how to create tab navigation
+if navigatore create on the top to this use 
 ```
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
