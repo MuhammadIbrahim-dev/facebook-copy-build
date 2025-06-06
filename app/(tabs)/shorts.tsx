@@ -8,5 +8,5 @@ export default function shorts() {
     </View>
   )
 }
-
+    
 const styles = StyleSheet.create({})
