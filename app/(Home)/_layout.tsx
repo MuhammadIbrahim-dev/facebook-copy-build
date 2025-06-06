@@ -2,14 +2,13 @@ import { Ionicons } from '@expo/vector-icons';
 import React, { useState } from 'react';
 import { StyleSheet, Text, TouchableOpacity, useWindowDimensions, View } from 'react-native';
 import { SceneMap, TabView } from 'react-native-tab-view';
-
 import Home from '.'; // your Home component
 import Explore from './explore';
 import Profile from './profile';
 import Shorts from './Shorts';
 import uplaod from './uplaod';
 
-export default function SwipeTabsWithBottomBar() {
+export default function _layout() {
   const layout = useWindowDimensions();
   const [index, setIndex] = useState(0);
 
