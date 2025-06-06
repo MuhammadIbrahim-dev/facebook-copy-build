@@ -2,12 +2,12 @@ import React from "react";
 import { Text, View } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
-export default function profile() {
+export default function video() {
   return (
     <SafeAreaProvider>
       <SafeAreaView>
         <View>
-          <Text>profile</Text>
+          <Text>video</Text>
         </View>
       </SafeAreaView>
     </SafeAreaProvider>
