@@ -1,15 +1,16 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
-
-export default function uplaod() {
+export default function message() {
   return (
     <SafeAreaProvider>
       <SafeAreaView>
         <View>
-          <Text>uplaod</Text>
+          <Text>message</Text>
         </View>
       </SafeAreaView>
     </SafeAreaProvider>
   );
 }
+
+const styles = StyleSheet.create({});

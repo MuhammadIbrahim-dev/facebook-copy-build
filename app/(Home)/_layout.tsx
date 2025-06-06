@@ -1,12 +1,12 @@
 import { Ionicons } from '@expo/vector-icons';
 import React, { useState } from 'react';
-import { StyleSheet, Text, TouchableOpacity, useWindowDimensions, View } from 'react-native';
+import { StyleSheet, TouchableOpacity, useWindowDimensions, View } from 'react-native';
 import { SceneMap, TabView } from 'react-native-tab-view';
 import Home from '.'; // your Home component
-import Explore from './explore';
-import Profile from './profile';
-import Shorts from './shorts';
-import uplaod from './uplaod';
+import Friends from './friends';
+import Message from './message';
+import Notification from './notificaton';
+import Video from './video';
 
 export default function _layout() {
   const layout = useWindowDimensions();
@@ -14,18 +14,18 @@ export default function _layout() {
 
   const [routes] = useState([
     { key: 'home', title: 'Home', icon: 'home-outline' },
-   {key: 'shorts' ,title: 'Shorts',icon: "play-circle-outline" },
-    {key: 'uplaod', title: 'Uplaod', icon: 'cloud-upload'},
-     { key: 'explore', title: 'Explore', icon: 'compass-outline' },
-    { key: 'profile', title: 'Profile', icon: 'person-circle-outline' },
+    { key: 'friends', title: 'Friends', icon: 'people-outline' },
+   {key: 'message' ,title: 'Message',icon: "chatbubble-outline" },
+    {key: 'video', title: 'Video', icon: 'tv-outline'},
+    { key: 'notificaton', title: 'Notification', icon: 'notifications-outline' },
   ]);
 
   const renderScene = SceneMap({
     home: Home,
-    explore: Explore,
-    shorts: Shorts,
-    profile: Profile,
-    uplaod: uplaod,
+    friends: Friends,
+    message : Message,
+    notificaton : Notification,
+    video: Video,
     
   });
   return (
@@ -37,7 +37,8 @@ export default function _layout() {
         initialLayout={{ width: layout.width }}
         renderTabBar={() => null} // Hide top tab bar
       />
-      <View style={styles.bottomTab}>
+      <View style={styles.topTab}>
+        <View></View>
         {routes.map((route, i) => (
           <TouchableOpacity
             key={route.key}
@@ -51,9 +52,9 @@ export default function _layout() {
             />
 
  
-            <Text style={{ color: i === index ? '#007AFF' : 'gray' }}>
+            {/* <Text style={{ color: i === index ? '#007AFF' : 'gray' }}>
               {route.title}
-            </Text>
+            </Text> */}
           </TouchableOpacity>
         ))}
       </View>
@@ -62,7 +63,9 @@ export default function _layout() {
 }
 
 const styles = StyleSheet.create({
-  bottomTab: {
+  topTab: {
+    position:'absolute',
+    width:'100%',
     flexDirection: 'row',
     justifyContent: 'space-around',
     backgroundColor: '#fff',
