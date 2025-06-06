@@ -1,10 +1,15 @@
-import React from 'react'
-import { Text, View } from 'react-native'
+import React from "react";
+import { Text, View } from "react-native";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 export default function uplaod() {
   return (
-    <View>
-      <Text>uplaod</Text>
-    </View>
-  )
+    <SafeAreaProvider>
+      <SafeAreaView>
+        <View>
+          <Text>uplaod</Text>
+        </View>
+      </SafeAreaView>
+    </SafeAreaProvider>
+  );
 }

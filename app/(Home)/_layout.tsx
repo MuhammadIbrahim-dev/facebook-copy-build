@@ -5,7 +5,7 @@ import { SceneMap, TabView } from 'react-native-tab-view';
 import Home from '.'; // your Home component
 import Explore from './explore';
 import Profile from './profile';
-import Shorts from './Shorts';
+import Shorts from './shorts';
 import uplaod from './uplaod';
 
 export default function _layout() {
