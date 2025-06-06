@@ -28,7 +28,6 @@ export default function _layout() {
     uplaod: uplaod,
     
   });
-
   return (
     <>
       <TabView
