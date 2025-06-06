@@ -5,6 +5,8 @@ import { SceneMap, TabView } from 'react-native-tab-view';
 import Home from '.'; // your Home component
 import Explore from './explore';
 import Profile from './profile';
+import Shorts from './Shorts';
+import uplaod from './uplaod';
 
 export default function _layout() {
   const layout = useWindowDimensions();
@@ -12,14 +14,19 @@ export default function _layout() {
 
   const [routes] = useState([
     { key: 'home', title: 'Home', icon: 'home-outline' },
-    { key: 'explore', title: 'Explore', icon: 'compass-outline' },
+   {key: 'shorts' ,title: 'Shorts',icon: "play-circle-outline" },
+    {key: 'uplaod', title: 'Uplaod', icon: 'cloud-upload'},
+     { key: 'explore', title: 'Explore', icon: 'compass-outline' },
     { key: 'profile', title: 'Profile', icon: 'person-circle-outline' },
   ]);
 
   const renderScene = SceneMap({
     home: Home,
     explore: Explore,
+    shorts: Shorts,
     profile: Profile,
+    uplaod: uplaod,
+    
   });
   return (
     <>
@@ -37,11 +44,13 @@ export default function _layout() {
             style={styles.tabItem}
             onPress={() => setIndex(i)}
           >
-            <Ionicons
-              name={route.icon}
+                <Ionicons
+              name={ route.icon}
               size={24}
               color={i === index ? '#007AFF' : 'gray'}
             />
+
+ 
             <Text style={{ color: i === index ? '#007AFF' : 'gray' }}>
               {route.title}
             </Text>
