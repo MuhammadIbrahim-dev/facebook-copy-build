@@ -21,7 +21,6 @@ export default function _layout() {
     explore: Explore,
     profile: Profile,
   });
-
   return (
     <>
       <TabView
