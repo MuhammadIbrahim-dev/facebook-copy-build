@@ -1478,4 +1478,4 @@ const messages =[
   }
 ]
 
-export { posts, notifications, Friends, marketplace , messages };
+export { Friends, marketplace, messages, notifications, posts }
