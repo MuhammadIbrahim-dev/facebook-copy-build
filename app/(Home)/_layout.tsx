@@ -1,12 +1,14 @@
 import { Ionicons } from '@expo/vector-icons';
 import React, { useState } from 'react';
-import { StyleSheet, TouchableOpacity, useWindowDimensions, View } from 'react-native';
+import { Image, StyleSheet, TouchableOpacity, useWindowDimensions, View } from 'react-native';
 import { SceneMap, TabView } from 'react-native-tab-view';
 import Home from '.'; // your Home component
 import Friends from './friends';
+import Marketplace from './marketeplace';
 import Message from './message';
 import Notification from './notificaton';
 import Video from './video';
+
 
 
 export default function _layout() {
@@ -19,6 +21,7 @@ export default function _layout() {
    {key: 'message' ,title: 'Message',icon: "chatbubble-outline" },
     {key: 'video', title: 'Video', icon: 'tv-outline'},
     { key: 'notificaton', title: 'Notification', icon: 'notifications-outline' },
+    {key: 'marketeplace', title: 'Marketplace', icon:'storefront'}
   ]);
 
   const renderScene = SceneMap({
@@ -27,6 +30,7 @@ export default function _layout() {
     message : Message,
     notificaton : Notification,
     video: Video,
+    marketeplace: Marketplace,
     
   });
   return (
@@ -38,8 +42,10 @@ export default function _layout() {
         initialLayout={{ width: layout.width }}
         renderTabBar={() => null} // Hide top tab bar
       />
+     <View>
+<Image source={require('../../assets/images/images.jpg')} style={{ width: 100, height: 100 }}/>
+      </View>
       <View style={styles.topTab}>
-        <View></View>
         {routes.map((route, i) => (
           <TouchableOpacity
             key={route.key}
@@ -62,7 +68,6 @@ export default function _layout() {
     </>
   );
 }
-
 const styles = StyleSheet.create({
   topTab: {
     position:'absolute',
