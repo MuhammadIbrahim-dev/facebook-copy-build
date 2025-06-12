@@ -8,6 +8,7 @@ export default function video() {
       <SafeAreaView>
         <View>
           <Text>video</Text>
+
         </View>
       </SafeAreaView>
     </SafeAreaProvider>

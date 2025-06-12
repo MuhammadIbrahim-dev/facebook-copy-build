@@ -1,4 +1,4 @@
-const posts =[
+ const Posts =[
   {
     id: 1,
     name: "John Doe",
@@ -1479,5 +1479,5 @@ const messages =[
 ]
 
 
-export { Friends, marketplace, messages, notifications, posts }
+export { Friends, marketplace, messages, notifications, Posts }
 
