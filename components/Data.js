@@ -399,7 +399,7 @@
 ]
 
 
-const videos=[
+const videos =[
   {
     id:1,
     name:'john',
@@ -408,7 +408,7 @@ const videos=[
     likes: 1200,
     comments: 300,
     shares: 50,
-    videolink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    videolink: 'https://youtu.be/oWhFXIZZWuI?si=yMMWcsD_lMFkr3Qr',
     postdate: '2023-10-01',
     posttime: '10:00 AM',
     posttext: 'Check out this amazing sunset I captured during my hike!',
@@ -422,7 +422,7 @@ const videos=[
     likes: 1500,
     comments: 400,
     shares: 70,
-    videolink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    videolink: 'https://youtu.be/oWhFXIZZWuI?si=yMMWcsD_lMFkr3Qr',
     postdate: '2023-10-02',
     posttime: '11:00 AM',
     posttext: 'Witness the beauty of a sunrise at the beach!',
@@ -436,7 +436,7 @@ const videos=[
     likes: 1800,
     comments: 500,
     shares: 90,
-    videolink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    videolink: 'https://youtu.be/1WFVNo30jaE?si=x86wl_dAwrk-EwA1',
     postdate: '2023-10-03',
     posttime: '12:00 PM',
     posttext: 'Exploring the majestic mountains and capturing their beauty!',
@@ -450,7 +450,7 @@ const videos=[
     likes: 1600,
     comments: 450,
     shares: 80,
-    videolink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    videolink: 'https://youtu.be/cerYfcoPnjI?si=oa3DSolfmu17RJdm',
     postdate: '2023-10-04',
     posttime: '1:00 PM',
     posttext: 'Relaxing by the lake and enjoying nature\'s tranquility.',
@@ -464,7 +464,7 @@ const videos=[
     likes: 1400,
     comments: 350,
     shares: 60,
-    videolink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    videolink: 'https://youtu.be/PgnJSfOSVOY?si=_pHEsW4edXmMWM3k',
     postdate: '2023-10-05',
     posttime: '2:00 PM',
     posttext: 'Immerse yourself in the beauty of the forest!',
@@ -478,7 +478,7 @@ const videos=[
     likes: 2000,
     comments: 600,
     shares: 100,
-    videolink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    videolink: 'https://youtu.be/axrrqmLFuM8?si=FBnin_RSktEPU4mV',
     postdate: '2023-10-06',
     posttime: '3:00 PM',
     posttext: 'Enjoying the sun, sand, and sea at the beach!',
@@ -492,7 +492,7 @@ const videos=[
     likes: 1700,
     comments: 500,
     shares: 85,
-    videolink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    videolink: 'https://youtu.be/tExc5EOZ1DY?si=8-o6DNNj6fKYOrFK',
     postdate: '2023-10-07',
     posttime: '4:00 PM',
     posttext: 'Exploring the city lights and nightlife!',
@@ -506,7 +506,7 @@ const videos=[
     likes: 1900,
     comments: 550,
     shares: 95,
-    videolink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    videolink: 'https://youtu.be/tExc5EOZ1DY?si=8-o6DNNj6fKYOrFK',
     postdate: '2023-10-08',
     posttime: '5:00 PM',
     posttext: 'Witnessing the beauty of wildlife up close!',
@@ -520,7 +520,7 @@ const videos=[
     likes: 1300,
     comments: 300,
     shares: 55,
-    videolink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    videolink: '',
     postdate: '2023-10-09',
     posttime: '6:00 PM',
     posttext: 'Enjoying the winter wonderland and snow activities!',
@@ -1479,6 +1479,6 @@ const messages =[
   }
 ]
 
-export { Friends, marketplace, messages, notifications, Posts }
+export { Friends, marketplace, messages, notifications, Posts, videos }
 
 

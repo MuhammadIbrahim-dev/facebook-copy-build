@@ -3,6 +3,20 @@ import React from 'react';
 import { FlatList, Image, SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import { Posts } from '../Data';
 
+
+const Createbar = () => {
+  return (
+    <View style={{ flexDirection: 'row', alignItems: 'center', padding: 10 ,borderBottomColor: '#ccc', borderBottomWidth: 1}}>
+      <Image
+        source={{ uri: 'https://picsum.photos/seed/ianfleming/600/400' }}
+        style={{ width: 40, height: 40, borderRadius: 20, marginRight: 10 }}
+      />
+      <Text style={{ flex: 1 }}>What's on your mind?</Text>
+      <Ionicons name="camera-outline" size={24} color="black" />
+      <Ionicons name="image-outline" size={24} color="black" style={{ marginLeft: 10 }} />
+    </View>
+  );
+}
 type PostProps = {
   ListHeaderComponent?: React.ComponentType<any> | React.ReactElement | null;
 };
@@ -10,6 +24,7 @@ type PostProps = {
 export default function Post({ ListHeaderComponent }: PostProps) {
   const renderItem = ({ item }) => (
     <View style={styles.card}>
+      <Createbar/>
       <View style={styles.header}>
         <Image source={{ uri: item.profileimage }} style={styles.avatar} />
         <View>
