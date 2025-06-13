@@ -218,3 +218,73 @@ export default function App() {
   );
 }
 ```
+<<<<<<< HEAD
+=======
+# Create slides..
+```
+npm install --save react-native-snap-carousel
+# or
+yarn add react-native-snap-carousel
+ # add animation.
+ npm install react-native-reanimated react-native-gesture-handler
+```
+# code ...
+```
+import React from 'react';
+import { View, Text, Dimensions, StyleSheet, Image } from 'react-native';
+import Carousel from 'react-native-snap-carousel';
+
+const { width: screenWidth } = Dimensions.get('window');
+
+const data = [
+  { title: 'Slide 1', image: 'https://via.placeholder.com/300x150' },
+  { title: 'Slide 2', image: 'https://via.placeholder.com/300x150' },
+  { title: 'Slide 3', image: 'https://via.placeholder.com/300x150' },
+];
+
+const MyCarousel = () => {
+  const renderItem = ({ item }) => (
+    <View style={styles.card}>
+      <Image source={{ uri: item.image }} style={styles.image} />
+      <Text style={styles.title}>{item.title}</Text>
+    </View>
+  );
+
+  return (
+    <Carousel
+      data={data}
+      renderItem={renderItem}
+      sliderWidth={screenWidth}
+      itemWidth={screenWidth * 0.8}
+      layout="default"
+      loop={true}
+      autoplay={true}
+      autoplayDelay={1000}
+      autoplayInterval={3000}
+    />
+  );
+};
+
+const styles = StyleSheet.create({
+  card: {
+    backgroundColor: '#fff',
+    borderRadius: 8,
+    padding: 10,
+    alignItems: 'center',
+  },
+  image: {
+    width: '100%',
+    height: 150,
+    borderRadius: 8,
+  },
+  title: {
+    marginTop: 10,
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+});
+
+export default MyCarousel;
+
+```
+>>>>>>> ff14daf62092b4cf70eea46ddd1c04cfe2df0af5

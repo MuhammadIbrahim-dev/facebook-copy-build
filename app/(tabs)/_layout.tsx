@@ -9,12 +9,21 @@ import {
 } from "react-native";
 import { SceneMap, TabView } from "react-native-tab-view";
 
+<<<<<<< HEAD
 import Home from ".";
 import Notification from "../(tabs)/notificaton";
 import Friends from "./friends";
 import Marketplace from "./marketplace";
 import Message from "./message";
 import Video from "./video";
+=======
+import Friends from "./friends/friends";
+import Home from "./index";
+import Marketplace from "./marketplace/marketplace";
+import Message from "./message/message";
+import Notification from "./notification/notificaton";
+import Video from "./videos/video";
+>>>>>>> ff14daf62092b4cf70eea46ddd1c04cfe2df0af5
 
 export default function _layout() {
   const layout = useWindowDimensions();
@@ -28,7 +37,10 @@ export default function _layout() {
     { key: "notification", title: "Notification", icon: "notifications-outline" },
     { key: "message", title: "Message", icon: "chatbubble-outline" },
   ]);
+<<<<<<< HEAD
 
+=======
+>>>>>>> ff14daf62092b4cf70eea46ddd1c04cfe2df0af5
   const renderScene = SceneMap({
     home: Home,
     video: Video,

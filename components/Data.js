@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 const posts =[
+=======
+ const Posts =[
+>>>>>>> ff14daf62092b4cf70eea46ddd1c04cfe2df0af5
   {
     id: 1,
     name: "John Doe",
@@ -1478,5 +1482,10 @@ const messages =[
   }
 ]
 
+<<<<<<< HEAD
 export { Friends, marketplace, messages, notifications, posts }
+=======
+
+export { Friends, marketplace, messages, notifications, Posts }
+>>>>>>> ff14daf62092b4cf70eea46ddd1c04cfe2df0af5
 
