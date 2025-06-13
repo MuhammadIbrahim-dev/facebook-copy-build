@@ -1,9 +1,13 @@
+import { Ionicons } from '@expo/vector-icons';
 import React from 'react';
-import { FlatList, Image, Linking, StyleSheet, Text, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { Posts } from '../Data'; // Adjust the path as needed
+import { FlatList, Image, SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import { Posts } from '../Data';
 
-export default function Post() {
+type PostProps = {
+  ListHeaderComponent?: React.ComponentType<any> | React.ReactElement | null;
+};
+
+export default function Post({ ListHeaderComponent }: PostProps) {
   const renderItem = ({ item }) => (
     <View style={styles.card}>
       <View style={styles.header}>
@@ -15,15 +19,18 @@ export default function Post() {
       </View>
       <Text style={styles.text}>{item.posttext}</Text>
       {item.postimage && <Image source={{ uri: item.postimage }} style={styles.postImage} />}
-      {item.postlink && (
-        <Text style={styles.link} onPress={() => Linking.openURL(item.postlink)}>
-          {item.postlink}
-        </Text>
-      )}
+            <View style={styles.stats}>
+        <Text>{item.likes}</Text>
+        <Text>{item.comments}</Text>
+        <Text>{item.send}</Text>
+        <Text>{item.shares}</Text>
+      </View>
       <View style={styles.stats}>
-        <Text>❤️ {item.likes}</Text>
-        <Text>💬 {item.comments}</Text>
-        <Text>🔄 {item.shares}</Text>
+        <Ionicons name="thumbs-up-outline" size={20} color="black" />
+        <Ionicons name="chatbubble-outline" size={20} color="black" />
+        <Ionicons name="send-outline" size={20} color="black" />
+        <Ionicons name="share-outline" size={20} color="black" />
+        
       </View>
     </View>
   );
@@ -34,6 +41,7 @@ export default function Post() {
         data={Posts}
         renderItem={renderItem}
         keyExtractor={(item) => item.id.toString()}
+        ListHeaderComponent={ListHeaderComponent}
       />
     </SafeAreaView>
   );

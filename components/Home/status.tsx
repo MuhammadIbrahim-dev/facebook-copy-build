@@ -1,6 +1,20 @@
+import { Ionicons } from '@expo/vector-icons';
 import React from 'react';
-import { Dimensions, FlatList, Image, StyleSheet, View } from 'react-native';
+import { Dimensions, FlatList, Image, StyleSheet, Text, View } from 'react-native';
 
+const StatusCrete =()=>{
+  return (
+    <View style={styles.box}>
+      <View style={{flexDirection:'column',cursor:'pointer', alignItems:'center',zIndex: 1, justifyContent:'center', position:'absolute', bottom: 20, left: 20}}>
+        <Ionicons name="add-circle-outline" size={40} color='#000' style={{fontWeight: 'bold'}} />
+      <Text style={styles.statusText}>Create Story</Text>
+       </View>
+      
+      <Image source={{uri: 'https://picsum.photos/seed/ianfleming/600/400'}} resizeMode='cover' style={{width:'100%', height:120,top:0,position:'absolute', borderRadius: 10}}/>
+      
+    </View>
+  );
+}
 const data = [
   { id: '1' ,
     profileimage: "https://picsum.photos/seed/ianfleming/600/400",
@@ -33,10 +47,12 @@ const data = [
 const Status = () => {
   return (
     <View style={styles.container}>
+
       <FlatList
         data={data}
         horizontal
         keyExtractor={(item) => item.id}
+        ListHeaderComponent={StatusCrete}
         renderItem={({ item }) => (
           <View style={styles.box}>
             <Image source={{uri: item.itemimage}} resizeMode='cover' style={{width:'100%', height:190, borderRadius: 10}}/>
@@ -56,6 +72,9 @@ const styles = StyleSheet.create({
   container: {
     marginTop: 20,
     alignItems: 'center',
+    position: 'relative',
+    flexDirection: 'row',
+
   },
   list: {
     justifyContent: 'space-between',
@@ -63,7 +82,9 @@ const styles = StyleSheet.create({
   box: {
     width: Dimensions.get('window').width / 3 - 20,
     height: 190,
-    backgroundColor: '#2E8B57', // SeaGreen color
+    backgroundColor: '#fff',
+    borderColor: '#ccc',
+    borderWidth: 1,
     marginHorizontal: 10,
     justifyContent: 'center',
     alignItems: 'center',
@@ -74,4 +95,8 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
   },
+  statusText: { 
+    fontSize: 16,
+    fontWeight: 'bold',
+  },    
 });
