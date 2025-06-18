@@ -1,6 +1,7 @@
 import { Ionicons } from '@expo/vector-icons';
 import React from 'react';
 import { Dimensions, FlatList, Image, StyleSheet, Text, View } from 'react-native';
+import { Createbar } from './Posts';
 
 const StatusCrete =()=>{
   return (
@@ -47,7 +48,6 @@ const data = [
 const Status = () => {
   return (
     <View style={styles.container}>
-
       <FlatList
         data={data}
         horizontal
@@ -62,6 +62,7 @@ const Status = () => {
         contentContainerStyle={styles.list}
         showsHorizontalScrollIndicator={false}
       />
+      <Createbar />
     </View>
   );
 };
@@ -73,7 +74,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
     alignItems: 'center',
     position: 'relative',
-    flexDirection: 'row',
+    flexDirection: 'column',
 
   },
   list: {

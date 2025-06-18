@@ -1,4 +1,4 @@
-import { AntDesign, FontAwesome5, Ionicons } from "@expo/vector-icons";
+import { AntDesign, FontAwesome5 } from "@expo/vector-icons";
 import React, { useState } from "react";
 import {
   Image,
@@ -12,29 +12,29 @@ import { SceneMap, TabView } from "react-native-tab-view";
 import Friends from "./friends/friends";
 import Home from "./index";
 import Marketplace from "./marketplace/marketplace";
-import Message from "./message/message";
+import Messanger from "./message/message";
 import Notification from "./notification/notificaton";
-import Video from "./videos/video";
+import Watch from "./videos/video";
 
 export default function _layout() {
   const layout = useWindowDimensions();
   const [index, setIndex] = useState(0);
 
   const [routes] = useState([
-    { key: "home", title: "Home", icon: "home-outline" },
-    { key: "video", title: "Video", icon: "tv-outline" },
-    { key: "friends", title: "Friends", icon: "people-outline" },
-    { key: "marketplace", title: "Marketplace", icon: "storefront" },
-    { key: "notification", title: "Notification", icon: "notifications-outline" },
-    { key: "message", title: "Message", icon: "chatbubble-outline" },
+    { key: "home", title: "Home", icon: "home" },
+    { key: "video", title: "Watch", icon: "video" },
+    { key: "friends", title: "Friends", icon: "user-friends" },
+    { key: "marketplace", title: "Marketplace", icon: "store" },
+    { key: "notification", title: "Notification", icon: "bell" },
+    { key: "message", title: "Messanger", icon: "facebook-messenger" },
   ]);
   const renderScene = SceneMap({
     home: Home,
-    video: Video,
+    video: Watch,
     friends: Friends,
     marketplace: Marketplace,
     notification: Notification,
-    message: Message,
+    message: Messanger,
   });
 
   return (
@@ -71,7 +71,8 @@ export default function _layout() {
             activeOpacity={0.7}
             hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
           >
-            <Ionicons
+            <FontAwesome5
+              solid
               name={route.icon}
               size={24}
               color={i === index ? "#007AFF" : "gray"}

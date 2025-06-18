@@ -17,6 +17,7 @@
     "@react-navigation/material-top-tabs": "^7.2.14",
     "@react-navigation/native": "^7.1.6",
     "expo": "53.0.11",
+    "expo-av": "~15.1.6",
     "expo-blur": "~14.1.5",
     "expo-constants": "~17.1.6",
     "expo-font": "~13.3.1",
@@ -33,6 +34,7 @@
     "react-dom": "19.0.0",
     "react-native": "0.79.3",
     "react-native-animated-carousel": "^1.0.3",
+    "react-native-fontawesome": "^7.0.0",
     "react-native-gesture-handler": "~2.24.0",
     "react-native-pager-view": "6.7.1",
     "react-native-reanimated": "~3.17.4",
@@ -43,8 +45,7 @@
     "react-native-tab-view": "^4.1.1",
     "react-native-video": "^6.15.0",
     "react-native-web": "~0.20.0",
-    "react-native-webview": "13.13.5",
-    "expo-av": "~15.1.6"
+    "react-native-webview": "13.13.5"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",

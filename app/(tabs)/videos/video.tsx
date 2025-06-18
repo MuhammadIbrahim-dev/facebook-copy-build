@@ -1,5 +1,5 @@
 import { videos } from "@/components/Data";
-import { Ionicons } from "@expo/vector-icons";
+import { FontAwesome5 } from "@expo/vector-icons";
 import React from "react";
 import { FlatList, Image, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -29,10 +29,10 @@ export default function video() {
           <Text>{item.shares}</Text>
         </View>
         <View style={styles.stats}>
-          <Ionicons name="thumbs-up-outline" size={20} color="black" />
-          <Ionicons name="chatbubble-outline" size={20} color="black" />
-          <Ionicons name="send-outline" size={20} color="black" />
-          <Ionicons name="share-outline" size={20} color="black" />
+                  <FontAwesome5 name="thumbs-up" size={20} color="black" />
+          <FontAwesome5 name="comment" size={20} color="black" />
+          <FontAwesome5 name="paper-plane" size={20} color="black" />
+          <FontAwesome5 name="share" size={20} color="black" />
           
         </View>
       </View>
