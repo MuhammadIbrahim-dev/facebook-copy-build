@@ -1,20 +1,37 @@
   import { FontAwesome5, Ionicons } from '@expo/vector-icons';
+import * as DocumentPicker from 'expo-document-picker';
 import React from 'react';
-import { FlatList, Image, SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import { FlatList, Image, SafeAreaView, StyleSheet, Text, TextInput, View } from 'react-native';
 import { Posts } from '../Data';
 
 
 
+
   export const Createbar = () => {
+    const [File ,setFile] = React.useState(null);
+    const  expofilepiker = async () => {
+      let result = await DocumentPicker.getDocumentAsync({type:'*/*'})
+
+      if (result.type === 'success') {
+        setFile(result);
+        console.log("File selected:", result);
+      } else {
+        console.log("File selection cancelled or failed");
+      }
+    }
     return (
       <View style={{ flexDirection: 'row', alignItems: 'center', padding: 10 ,borderBottomColor: '#ccc', borderBottomWidth: 1}}>
         <Image
           source={{ uri: 'https://picsum.photos/seed/ianfleming/600/400' }}
           style={{ width: 40, height: 40, borderRadius: 20, marginRight: 10 }}
         />
-        <Text style={{ flex: 1 }}>What's on your mind?</Text>
+        <TextInput
+        placeholder="What's on your mind?" style={{width:
+  '70%', height: 40, borderColor: '#ccc', borderWidth: 1, borderRadius: 20, paddingHorizontal: 10}
+        }/>
         <Ionicons name="camera-outline" size={24} color="black" />
-        <Ionicons name="image-outline" size={24} color="black" style={{ marginLeft: 10 }} />
+        <Ionicons name="image-outline" onPress={expofilepiker} size={24} color="black" style={{marginLeft: 10}} />
+
       </View>
     );
   }
