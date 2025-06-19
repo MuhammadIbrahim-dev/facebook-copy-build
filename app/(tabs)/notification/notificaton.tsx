@@ -16,7 +16,6 @@ export default function Notification() {
         height: 50,
       }}
     >
-      {" "}
       <Text style={{ fontSize: 30, fontWeight: "700" }}>Notification</Text>
       <Ionicons name="search" size={30} style={{paddingRight:10}}/>
     </View>
@@ -55,7 +54,7 @@ export default function Notification() {
               }}
             >
               <Text style={{ paddingLeft: 10, fontWeight: "800" }}>
-                {item.name}{" "}
+                {item.name}
                 <Text style={{ fontWeight: "400", fontSize: 10 }}>
                   {date} {time}
                 </Text>
