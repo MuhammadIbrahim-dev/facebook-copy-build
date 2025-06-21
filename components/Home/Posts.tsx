@@ -1,13 +1,16 @@
-  import { FontAwesome5, Ionicons } from '@expo/vector-icons';
+  import { getpost } from '@/app/firebase/getpost';
+import { FontAwesome5, Ionicons } from '@expo/vector-icons';
 import * as DocumentPicker from 'expo-document-picker';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { FlatList, Image, SafeAreaView, StyleSheet, Text, TextInput, View } from 'react-native';
-import { Posts } from '../Data';
 
 
 
 
   export const Createbar = () => {
+
+
+    
     const [File ,setFile] = React.useState(null);
     const  expofilepiker = async () => {
       let result = await DocumentPicker.getDocumentAsync({type:'*/*'})
@@ -39,24 +42,40 @@ import { Posts } from '../Data';
     ListHeaderComponent?: React.ComponentType<any> | React.ReactElement | null;
   };
 
+    
+
+
   export default function Post({ ListHeaderComponent }: PostProps) {
+
+    const [postitem ,setPostitem]=useState([])
+useEffect(()=>{
+  const postdata = async ()=>{
+    try{
+      const fetchdata = await getpost();
+      setPostitem(fetchdata);
+    } catch(error){
+    console.log('error data feching data ',error);}
+  
+  }
+  postdata()
+},[])
 
     const renderItem = ({ item }) => (
       <View style={styles.card}>
         <View style={styles.header}>
           <Image source={{ uri: item.profileimage }} style={styles.avatar} />
           <View>
-            <Text style={styles.name}>{item.name}</Text>
-            <Text style={styles.date}>{item.postdate} · {item.posttime}</Text>
+            <Text style={styles.name}>{item.username}</Text>
+            <Text style={styles.date}>{item.date} · {item.time}</Text>
           </View>
         </View>
-        <Text style={styles.text}>{item.posttext}</Text>
+        <Text style={styles.text}>{item.username}</Text>
         {item.postimage && <Image source={{ uri: item.postimage }} style={styles.postImage} />}
               <View style={styles.stats}>
           <Text>{item.likes}</Text>
           <Text>{item.comments}</Text>
           <Text>{item.send}</Text>
-          <Text>{item.shares}</Text>
+          <Text>{item.share}</Text>
         </View>
         <View style={styles.stats}>
           <FontAwesome5 name="thumbs-up" size={25} color="black" />
@@ -70,7 +89,7 @@ import { Posts } from '../Data';
     return (
       <SafeAreaView style={styles.container}>
         <FlatList
-          data={Posts}
+          data={postitem}
           renderItem={renderItem}
           keyExtractor={(item) => item.id.toString()}
           ListHeaderComponent={ListHeaderComponent}
